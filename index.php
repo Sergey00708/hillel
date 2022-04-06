@@ -21,6 +21,8 @@ class people
    }
 }
 
-$sergey = new people('Pasha',28, 90);
+$sergey = new people('sergey',31, 72);
 $sergey->about();
 
+$pasha = new people('Pasha', 28, 90);
+$pasha->about();
