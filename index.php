@@ -28,3 +28,5 @@ $pasha = new people('Pasha', 28, 90);
 $pasha->about();
 
 $vasya = new people('vasya', 40, 100);
+
+$sasha = new people('sasha', 50, 100);
