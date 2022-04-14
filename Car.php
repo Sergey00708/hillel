@@ -1,7 +1,9 @@
 <?php
+namespace MyProject;
 
-include 'interfaceCar.php';
-class Car implements MovableInterface
+require_once 'MovableInterface.php';
+
+abstract class Car implements MovableInterface
 {
 
     protected $brend;
@@ -9,6 +11,9 @@ class Car implements MovableInterface
     protected $color;
     protected $year;
     private $minSpeed = 0;
+    protected static $country;
+    public const COUNTRY_BMV = 'Germany';
+    public const COUNTRY_MERCEDES = 'Ukraine';
 
 
     public function __construct($maxSpeed, $brend)
@@ -37,21 +42,42 @@ class Car implements MovableInterface
         return 'Машина марки' . $this->brend . 'Остановилась';
     }
 
+    public $NewSpeed = [];
+
     public function up($unit)
     {
-        if ($unit <= $this->maxSpeed) {
-            return 'Машина марки' . $this->brend . 'разогналась до' . $this->unit = $unit;
+        $this->unit = $unit;
+        $this->NewSpeed[] = $unit;
+        $sum = array_sum($this->NewSpeed);
+
+        if ($sum <= $this->maxSpeed) {
+            return 'Машина марки' . $this->brend . 'разогналась до' . $sum;
         } else {
             return 'С такой скоростью эта машина не может ехать';
         }
     }
 
+
     public function down($unit)
     {
-        if ($unit === $this->minSpeed){
+        $this->unit = $unit;
+        $a = array_sum($this->NewSpeed) - $unit;
+
+        if ($a === $this->minSpeed){
             echo $this->stop();
         }else{
-            echo 'Машина марки' . $this->brend . 'сбросила скорость до' . $this->unit = $unit;
+            echo 'Машина марки' . $this->brend . 'сбросила скорость до' . $a;
         }
     }
+
+    public static function getCountry()
+    {
+        return self::$country;
+    }
+
+    public static function setCountry($country)
+    {
+        self::$country = $country;
+    }
+
 }

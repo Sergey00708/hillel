@@ -1,5 +1,5 @@
 <?php
-
+namespace MyProject;
 
 interface MovableInterface
 {
@@ -29,7 +29,3 @@ interface MovableInterface
      */
     public function down(int $unit);
 }
-
-
-
- 
