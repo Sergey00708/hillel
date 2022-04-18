@@ -1,12 +1,14 @@
 <?php
-namespace MyProject\Ithillel\Auto;
+namespace Ithillel\Auto;
 
-use MyProject\Car;
+use Car;
 
-require_once 'Car.php';
+require_once 'Autoloader.php';
+
 
 class Racing extends Car
 {
-    protected $Kind;
-    protected $Creator;
+
 }
+
+

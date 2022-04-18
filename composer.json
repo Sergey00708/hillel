@@ -1,0 +1,21 @@
+{
+    "name": "sergey/my-project",
+    "description": "MyProgect",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey",
+            "email": "Fenix00708@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Auto\\": "Ithillel/Auto"
+        }
+    }
+}

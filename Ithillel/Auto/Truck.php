@@ -1,9 +1,10 @@
 <?php
-namespace MyProject\Ithillel\Auto;
+namespace Ithillel\Auto;
 
-use MyProject\Car;
+use Car;
 
-include 'Car.php';
+require_once 'Autoloader.php';
+
 
 class Truck extends Car
 {

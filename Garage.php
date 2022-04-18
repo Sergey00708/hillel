@@ -1,25 +1,26 @@
 <?php
 
-use MyProject\Ithillel\Auto\Truck;
-use MyProject\Ithillel\Auto\Racing;
-include 'Autoloader.php';
+use Ithillel\Auto\Racing;
+use Ithillel\Auto\Truck;
 
-$car1 = new Truck(150, 'ZIL');
+require_once 'Autoloader.php';
 
-
-//Truck::setCountry('USA');
-//echo Truck::getCountry() . PHP_EOL;
-//
-//Racing::setCountry('Ukraine');
-//echo Racing::getCountry();
-//
+$engin = new Engine('4 L');
+$car1 = new Racing($engin,500,'Lexus');
+$car1->kuzov->setColor('red');
+$car1->kuzov->setType('sedan');
+$sergey = new Driver('Sergey');
+$sergey->startRacing($car1);
 
 
 
-//$car = new Truck(100, 'bmv');
-//echo $car->start(). PHP_EOL;
-//echo $car->up(10). PHP_EOL;
-//echo $car->up(20). PHP_EOL;
-//echo $car->down(30). PHP_EOL;
+
+
+
+
+
+
+
+
 
 

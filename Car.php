@@ -1,7 +1,7 @@
 <?php
-namespace MyProject;
 
-require_once 'MovableInterface.php';
+require_once 'Autoloader.php';
+
 
 abstract class Car implements MovableInterface
 {
@@ -14,12 +14,16 @@ abstract class Car implements MovableInterface
     protected static $country;
     public const COUNTRY_BMV = 'Germany';
     public const COUNTRY_MERCEDES = 'Ukraine';
+    protected $engine;
+    protected $kuzov;
 
 
-    public function __construct($maxSpeed, $brend)
+    public function __construct(Engine $engine,$maxSpeed, $brend)
     {
         $this->maxSpeed = $maxSpeed;
         $this->brend = $brend;
+        $this->engine = $engine;
+        $this->kuzov = new Kuzov();
     }
 
     public function __get($name)
@@ -34,7 +38,8 @@ abstract class Car implements MovableInterface
 
     public function start()
     {
-        return 'Машина марки' . ' ' . $this->brend . ' ' . 'Поехала';
+        echo $this->engine->startEngine() . PHP_EOL;
+        echo 'Машина марки' . ' ' . $this->brend . ' ' . 'Поехала';
     }
 
     public function stop()
@@ -79,5 +84,6 @@ abstract class Car implements MovableInterface
     {
         self::$country = $country;
     }
+
 
 }
