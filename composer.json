@@ -9,13 +9,14 @@
             "email": "Fenix00708@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "sergey00708/mathimatics": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Auto\\": "Ithillel/Auto"
+            "Project\\": "oop"
         }
     }
 }

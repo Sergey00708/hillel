@@ -1,9 +1,9 @@
 <?php
-namespace Ithillel\Auto;
+namespace Project\Ithillel\Auto;
 
-use Car;
+use Project\Car;
 
-require_once 'Autoloader.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 
 
 class Truck extends Car

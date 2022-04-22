@@ -1,5 +1,5 @@
 <?php
-
+namespace Project;
 
 interface MovableInterface
 {

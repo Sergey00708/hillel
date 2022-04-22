@@ -1,9 +1,10 @@
 <?php
+namespace Project;
 
-use Ithillel\Auto\Racing;
-use Ithillel\Auto\Truck;
+use Project\Ithillel\Auto\Racing;
+use Project\Ithillel\Auto\Truck;
 
-require_once 'Autoloader.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 
 class Driver
@@ -20,7 +21,7 @@ class Driver
 
     public function startRacing(Racing $racing)
     {
-        $racing->start();
+       return $racing->start();
     }
 
     public function stopRacing(Racing $racing)
@@ -30,12 +31,12 @@ class Driver
 
     public function UpRacing(Racing $racing,$unit)
     {
-        $racing->up($unit);
+        return $racing->up($unit);
     }
 
     public function DownRacing(Racing $racing, $unit)
     {
-        $racing->down($unit);
+        return $racing->down($unit);
     }
 
 ///////////////////////////////////////////////////////////////////

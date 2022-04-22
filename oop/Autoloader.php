@@ -13,7 +13,7 @@ function MyAutoloader($className)
 function Myloader($className)
 {
 //    echo 'Обратились к неизвестному классу ' . $className . PHP_EOL;
-    $filename = __DIR__ . '/' . $className . '.php';
+    $filename = __DIR__ . 'Autoloader.php/' . $className . '.php';
     //echo $filename . PHP_EOL;
     if (file_exists($filename)) {
         require_once $filename;

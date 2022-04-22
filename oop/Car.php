@@ -1,6 +1,7 @@
 <?php
+namespace Project;
 
-require_once 'Autoloader.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 
 abstract class Car implements MovableInterface
@@ -38,13 +39,12 @@ abstract class Car implements MovableInterface
 
     public function start()
     {
-        echo $this->engine->startEngine() . PHP_EOL;
-        echo 'Машина марки' . ' ' . $this->brend . ' ' . 'Поехала';
+        echo $this->engine->startEngine() .' '. 'Машина марки' . ' ' . $this->brend . ' ' . 'Поехала';
     }
 
     public function stop()
     {
-        return 'Машина марки' . $this->brend . 'Остановилась';
+        echo 'Машина марки' . $this->brend . 'Остановилась';
     }
 
     public $NewSpeed = [];
@@ -56,9 +56,9 @@ abstract class Car implements MovableInterface
         $sum = array_sum($this->NewSpeed);
 
         if ($sum <= $this->maxSpeed) {
-            return 'Машина марки' . $this->brend . 'разогналась до' . $sum;
+            echo 'Машина марки' . $this->brend . 'разогналась до' . $sum;
         } else {
-            return 'С такой скоростью эта машина не может ехать';
+            echo 'С такой скоростью эта машина не может ехать';
         }
     }
 
